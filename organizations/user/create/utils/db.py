@@ -1,11 +1,11 @@
 from pymongo import MongoClient
 
-from organizations.user.create.util.aws import get_db_credentials
+from .aws import get_db_credentials
 
 
 class MongoDBConnection:
     def __init__(self):
-        self.connection: MongoDBConnection
+        self.connection: MongoClient
 
     def __enter__(self):
         credentials = get_db_credentials()

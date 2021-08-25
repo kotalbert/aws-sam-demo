@@ -1,4 +1,4 @@
-from organizations.user.create.util.db import MongoDBConnection
+from organizations.user.create.utils.db import MongoDBConnection
 
 
 def test_connection():
