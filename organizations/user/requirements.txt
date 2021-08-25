@@ -1,5 +1,4 @@
 requests
-ujson
 pymongo
 dnspython
 marshmallow
