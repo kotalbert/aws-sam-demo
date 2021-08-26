@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="accountSettings">
-    <option name="activeProfile" value="profile:aws-sam" />
+    <option name="activeProfile" value="profile:default" />
     <option name="activeRegion" value="eu-central-1" />
     <option name="recentlyUsedProfiles">
       <list>
-        <option value="profile:aws-sam" />
         <option value="profile:default" />
+        <option value="profile:aws-sam" />
       </list>
     </option>
     <option name="recentlyUsedRegions">
