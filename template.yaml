@@ -56,6 +56,33 @@ Resources:
             Method: GET
             Auth:
               Authorizer: NONE
+  OrganizationUserUpdateById:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      CodeUri: organizations
+      Handler: user.update.app.lambda_handler
+      Runtime: python3.9
+      Events:
+        CompanyUserUpdateByIdAPI:
+          Type: Api
+          Properties:
+            Path: '/user/{Id}'
+            Method: PUT
+
+  OrganizationUserDeleteById:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      CodeUri: organizations
+      Handler: delete.app.lambda_handler
+      Runtime: python3.9
+      Events:
+        CompanyUserDeleteByIdAPI:
+          Type: Api
+          Properties:
+            Path: '/user/{Id}'
+            Method: DELETE
+            Auth:
+              Authorizer: NONE
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

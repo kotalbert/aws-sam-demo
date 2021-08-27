@@ -12,15 +12,13 @@ def lambda_handler(event, context):
     except TypeError:
         object_id = None
 
-    body = json.loads(event['body'])
+    body = event['body']
     result = validator.UserSchema()
 
     res = not bool(result.validate(body))
     if res:
-        mongo = db.MongoDBConnection()
-        with mongo:
-            database = mongo.connection['myDB']
-            collection = database['registrations']
+        with db.MongoDBConnection() as mongo:
+            collection = mongo.connection.get_database()['registrations']
             try:
                 collection.update_one({'_id': ObjectId(object_id)}, {'$set': body})
             except InvalidId:

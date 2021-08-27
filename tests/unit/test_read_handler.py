@@ -7,7 +7,7 @@ from organizations.user.read import app
 def fixture_event():
     return {
         'pathParameters': {
-            'id': '61269d278cec1618eff925dd'
+            'Id': '61269d278cec1618eff925dd'
         }
     }
 
